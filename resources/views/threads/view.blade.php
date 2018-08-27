@@ -7,6 +7,12 @@
                 <span class="card-title">{{ $result->title }}</span>
                 {{ $result->body }}
             </div>
+            <div class="card-action">
+                @can('update', $result)
+                <a href="/threads/{{ $result->id }}/edit">{{ __('Edit Thread') }}</a>
+                @endcan
+                <a href="/">{{ __('Back') }}</a>
+            </div>
         </div>
         <replies
             replied="{{ __('Replied') }}"
